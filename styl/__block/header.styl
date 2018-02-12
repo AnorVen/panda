@@ -14,14 +14,32 @@
   .nav{
     display: flex;
     flex-wrap: no-wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     &__item{
       a{
         padding: 10px;
-        position: relative;
+        font-size 20px;
+        display: block;
 
+      }
+      svg{
+        font-size: 28px;
+        line-height 18px;
+        vertical-align: middle;
+        color: #C9E4FE
+      }
+
+    }
+    .up{
+      svg{
+        margin-bottom: -7px;
+      }
+    }
+    .down{
+      svg{
+        margin-top: -3px;
       }
     }
 
