@@ -39,7 +39,9 @@ $('.clients__list').owlCarousel({
       autoplay: true,
       autoplayTimeout: 2000,
       autoplayHoverPause: true,
-      margin: 30,
+      margin: 50,
+      center: true,
+
     }
   );
   $('.smm-works__item .tab').hide();
