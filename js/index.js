@@ -3,8 +3,8 @@ $(document).ready(function () {
 
   $('#slider').owlCarousel(
     {
-      items:1,
-      loop:true,
+      items: 1,
+      loop: true,
       video: true,
       nav: true,
       animateOut: 'fadeOut',
@@ -14,27 +14,49 @@ $(document).ready(function () {
     }
   );
 
-$('.clients__list').owlCarousel({
-  items: 4,
-  loop: true,
-  owl2row: true,
-  dots: false,
-  autoplay: true,
-  autoplayTimeout: 4000,
-  autoplayHoverPause: true
+  $('.clients__list').owlCarousel({
+    items: 4,
+    loop: true,
+    owl2row: true,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 4000,
+    autoplayHoverPause: true,
+    responsive: { //Адаптивность. Кол-во выводимых элементов при определенной ширине.
+      0: {
+        items: 2
+      },
+      540: {
+        items: 3
+      },
+      992: {
+        items: 4
+      }
+    }
 
-});
+  });
   $('.our-team__list').owlCarousel({
     items: 4,
     loop: true,
     margin: 15,
     lazyLoad: true,
-    dots: false
+    dots: false,
+    responsive: { //Адаптивность. Кол-во выводимых элементов при определенной ширине.
+      0: {
+        items: 2
+      },
+      540: {
+        items: 3
+      },
+      992: {
+        items: 4
+      }
+    }
   });
   $('.slider').owlCarousel(
     {
-      items:1,
-      loop:true,
+      items: 1,
+      loop: true,
       animateOut: 'fadeOut',
       autoplay: true,
       autoplayTimeout: 2000,
@@ -56,9 +78,25 @@ $('.clients__list').owlCarousel({
     $(this).find('.tab').show();
     $(this).find('.smm-works__prev').hide();
     $(this).addClass('active');
-    $('html, body').animate({ scrollTop: $(this).offset().top }, 500);
+    $('html, body').animate({scrollTop: $(this).offset().top}, 500);
   })
 
 
+
+  $( ".cross" ).hide();
+  $( ".mobile-nav__list" ).hide();
+  $( ".hamburger" ).click(function() {
+    $( ".mobile-nav__list" ).slideToggle( "slow", function() {
+      $( ".hamburger" ).hide();
+      $( ".cross" ).show();
+    });
+  });
+
+  $( ".cross" ).click(function() {
+    $( ".mobile-nav__list" ).slideToggle( "slow", function() {
+      $( ".cross" ).hide();
+      $( ".hamburger" ).show();
+    });
+  });
 
 });

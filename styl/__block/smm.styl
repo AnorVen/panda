@@ -11,13 +11,23 @@
     margin: 15px;
     box-sizing: border-box
     text-align: center;
+    @media mobile-width {
+      width: calc(50% - 30px)
+    }
+    @media micro-width {
+      width: calc(100% - 30px)
+
+    }
     &.active {
       width: 100%;
-      .slider{
+      .slider {
         width: 70%;
         margin: 0 auto;
+        @media mobile-width {
+          width: 100%;
+        }
       }
-      .tab__discr{
+      .tab__discr {
         margin-bottom: 50px;
         text-align: left;
 
@@ -25,5 +35,28 @@
 
     }
 
+  }
+}
+
+.all_video.smm-works {
+  .smm-works__list {
+    .smm-works__item {
+      @media tablet-width {
+        width: calc(50% - 30px)
+      }
+      @media micro-width {
+        width: calc(100% - 30px)
+
+      }
+      &.active {
+        width: 100%;
+        .slider {
+          @media micro-width {
+            width: 100%;
+          }
+        }
+
+      }
+    }
   }
 }
